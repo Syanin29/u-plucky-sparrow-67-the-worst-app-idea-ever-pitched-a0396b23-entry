@@ -45,6 +45,7 @@ def validate_output():
     assert actual.count(b"\n") == 1, "entry.txt must be exactly one line"
     assert 1 <= len(LINE) <= 240, "line must be 1-240 characters"
     assert LINE.strip(), "line must not be only whitespace"
+    assert LINE.endswith("currently sitting."), "pitch must close on the sitting punchline"
     return hashlib.sha256(actual).hexdigest()
 
 
